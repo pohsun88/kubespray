@@ -167,8 +167,12 @@ openstack_lbaas_enabled: false
 ## List of authorization modes that must be configured for
 ## the k8s cluster. Only 'AlwaysAllow', 'AlwaysDeny', 'Node' and
 ## 'RBAC' modes are tested. Order is important.
-authorization_modes: ['Node', 'RBAC']
-rbac_enabled: "{{ 'RBAC' in authorization_modes or kubeadm_enabled }}"
+
+#authorization_modes: ['Node', 'RBAC']
+#rbac_enabled: "{{ 'RBAC' in authorization_modes or kubeadm_enabled }}"
+#Andrew@2018.01.18
+authorization_modes: []
+rbac_enabled: true
 
 ## List of key=value pairs that describe feature gates for
 ## the k8s cluster.
